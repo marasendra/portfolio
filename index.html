@@ -1,98 +1,121 @@
-<!DOCTYPE html>
+<!doctype html>
 <!-- Lien vers les icônes Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
 
 <html>
   <head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div id="particles-js"></div>
 
     <div class="profile-card">
-      <img
-        src="https://picsum.photos/100/100"
-        alt="Profile"
-        class="avatar"
-      />
+      <img src="https://picsum.photos/100/100" alt="Profile" class="avatar" />
       <h2 class="name">Marie-Ange Rasendra</h2>
-      <p class="bio">
-        Web developer & data viz enthusiast.
-        Building cool stuff with code.
-      </p>
-      <button class="follow-btn">Follow</button>
-      <a href="https://www.linkedin.com/in/marie-ange-rasendra-0231ba10a/" target="_blank" class="linkedin-btn">
-    <i class="fab fa-linkedin"></i> 
-</a>
+      <p class="bio" id="bio-text" aria-live="polite"></p>
+      <div class="social-links">
+        <a
+          href="https://www.linkedin.com/in/marie-ange-rasendra-0231ba10a/"
+          target="_blank"
+          class="linkedin-btn"
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a
+          href="https://github.com/marasendra"
+          target="_blank"
+          class="github-btn"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
     </div>
 
-    <script src="particles.js-master/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <script>
       particlesJS("particles-js", {
         particles: {
           number: {
-            value: 150,
-            density: {
-              enable: true,
-              value_area: 800,
-            },
+            value: 60,
           },
           color: {
-            value: "#9ca3af",
+            value: "#0077B5",
           },
           shape: {
             type: "circle",
           },
           opacity: {
             value: 0.5,
-            random: false,
           },
           size: {
             value: 3,
-            random: true,
           },
           line_linked: {
             enable: true,
             distance: 150,
-            color: "#9ca3af",
+            color: "#0077B5",
             opacity: 0.4,
             width: 1,
           },
           move: {
             enable: true,
-            speed: 3,
-            direction: "none",
-            random: false,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
+            speed: 2,
           },
         },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            onhover: {
-              enable: true,
-              mode: "repulse",
-            },
-            onclick: {
-              enable: true,
-              mode: "push",
-            },
-            resize: true,
-          },
-          modes: {
-            repulse: {
-              distance: 100,
-              duration: 0.4,
-            },
-            push: {
-              particles_nb: 6,
-            },
-          },
-        },
-        retina_detect: true,
       });
+
+      const bioElement = document.getElementById("bio-text");
+      const phrases = [
+        "Web developer & data viz enthusiast.",
+        "Building cool stuff with code.",
+      ];
+
+      let phraseIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+
+      function typeBio() {
+        const currentPhrase = phrases[phraseIndex];
+
+        if (isDeleting) {
+          charIndex -= 1;
+        } else {
+          charIndex += 1;
+        }
+
+        bioElement.textContent = currentPhrase.slice(0, charIndex);
+
+        if (!isDeleting && charIndex === currentPhrase.length) {
+          isDeleting = true;
+          setTimeout(typeBio, 1800);
+          return;
+        }
+
+        if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          setTimeout(typeBio, 350);
+          return;
+        }
+
+        const typingSpeed = isDeleting ? 60 : 100;
+        setTimeout(typeBio, typingSpeed);
+      }
+
+      typeBio();
     </script>
   </body>
 </html>
