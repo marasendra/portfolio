@@ -1,0 +1,86 @@
+body {
+  background: #f3f4f6;
+  padding: 40px;
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  font-family: system-ui, sans-serif;
+}
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.profile-card {
+  background: white;
+  border-radius: 12px;
+  padding: 50px;
+  margin: 50px auto;
+  text-align: center;
+  width: min(80%, 700px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #e5e7eb;
+}
+
+.name {
+  margin: 16px 0 8px;
+  color: #1f2937;
+  font-size: 20px;
+}
+
+.bio {
+  color: #6b7280;
+  font-size: 14px;
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+.follow-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 32px;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.follow-btn:hover {
+  background: #1d4ed8;
+}
+
+.linkedin-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-top: 14px;
+  background-color: #0077B5;
+  color: white;
+  text-decoration: none;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.linkedin-btn i {
+  margin-right: 0;
+}
+
+.linkedin-btn:hover {
+    background-color: #005582;
+}
