@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("js-enabled");
+
   if (typeof particlesJS === "function") {
     particlesJS("particles-js", {
       particles: {

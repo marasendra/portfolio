@@ -303,10 +303,16 @@ nav {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12);
 }
 
+
 .reveal-on-scroll {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.js-enabled .reveal-on-scroll {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
 .reveal-on-scroll.is-visible {
