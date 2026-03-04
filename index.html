@@ -10,22 +10,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <nav>
-      <ul>
-        <li class="prenom">Marie-Ange Rasendra</li>
-        <li><a href="#" , class="nav-about">About</a></li>
-        <li><a href="#" , class="nav-projects">My projects</a></li>
-        <li><a href="#" , class="nav-contact">Contact</a></li>
+    <nav class="side-nav">
+      <a href="#" class="nav-logo">Marie-Ange Rasendra</a>
+      <ul class="nav-links">
+        <li><a href="#" class="nav-about active">About</a></li>
+        <li><a href="#" class="nav-projects">My projects</a></li>
+        <li><a href="#" class="nav-contact">Contact</a></li>
       </ul>
     </nav>
     <div id="particles-js"></div>
@@ -33,12 +33,12 @@
     <div class="profile-card">
       <img src="img/profil.png" alt="Profile" class="avatar" />
       <h2 class="name">
-        Hi, I am Marie-Ange
+        Hi, I am <span id="first-name">Marie-Ange</span>
         <span class="wave-hand" role="img" aria-label="waving hand">👋</span>
       </h2>
       <p class="bio terminal-cursor" id="bio-text" aria-live="polite"></p>
 
-      <p class="presentation" style="color: #333">
+      <p class="presentation">
         I'm a passionate
         <span class="presentation-highlight">Data Scientist</span> with over 8
         years of experience. I love designing AI-driven solutions that
@@ -140,6 +140,15 @@
       }
 
       typeBio();
+
+      const navLinks = document.querySelectorAll(".side-nav .nav-links a");
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.forEach((item) => item.classList.remove("active"));
+          link.classList.add("active");
+        });
+      });
     </script>
   </body>
 </html>
