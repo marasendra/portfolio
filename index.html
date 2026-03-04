@@ -19,16 +19,16 @@
   </head>
   <body>
     <nav class="side-nav">
-      <a href="#" class="nav-logo">Marie-Ange Rasendra</a>
+      <a href="#about" class="nav-logo">Marie-Ange Rasendra</a>
       <ul class="nav-links">
-        <li><a href="#" class="nav-about active">About</a></li>
-        <li><a href="#" class="nav-projects">My projects</a></li>
+        <li><a href="#about" class="nav-about active">About</a></li>
+        <li><a href="#projects" class="nav-projects">My projects</a></li>
         <li><a href="#" class="nav-contact">Contact</a></li>
       </ul>
     </nav>
     <div id="particles-js"></div>
 
-    <div class="profile-card">
+    <div class="profile-card" id="about">
       <img src="img/profil.png" alt="Profile" class="avatar" />
       <h2 class="name">
         <span class="intro-word">Hi,</span><span class="intro-word">I</span
@@ -41,8 +41,8 @@
       <p class="presentation">
         I'm a passionate
         <span class="presentation-highlight">Data Scientist</span> with over 8
-        years of experience specializing in healthcare. I love designing AI-driven solutions that
-        streamline workflows and
+        years of experience specializing in healthcare. I love designing
+        AI-driven solutions that streamline workflows and
         <span class="presentation-highlight2">support business growth</span>. I
         thrive on transforming complex data into clear, actionable insights.
         <br /><br />Feel free to connect! I'm always happy to help or discuss
@@ -66,6 +66,83 @@
         </a>
       </div>
     </div>
+
+    <section class="projects" id="projects">
+      <div class="projects-container">
+        <h2 class="section-title reveal-on-scroll">Projects</h2>
+        <p class="projects-intro reveal-on-scroll">
+          Here are a few data products I built to turn complex information into
+          practical decisions.
+        </p>
+
+        <div class="projects-grid">
+          <article class="project-card reveal-on-scroll">
+            <div class="project-image project-image-link">
+              <a href="#" target="_blank" rel="noopener">
+                <div class="project-placeholder">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+              </a>
+            </div>
+            <div class="project-content">
+              <h3>
+                Enhancing healthcare cost communication through visualization
+              </h3>
+              <p>
+                A practical decision-tree framework that helps teams quickly
+                pick the right chart for healthcare cost analysis. It guides you
+                based on data structure, comparison needs (groups or years), and
+                the level of detail you want—from high-level views to
+                distribution-focused plots.
+              </p>
+              <div class="project-tags">
+                <span>Matplotlib</span>
+                <span>Python</span>
+                <span>Healthcare costs</span>
+                <span>Data visualization</span>
+              </div>
+              <div class="project-links-row">
+                <a
+                  href="https://static.hevaweb.com/web/PDF/2c224ef556e86-heva-recherche-cou-ts-poster-ispor2025-v3-web.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  class="project-link primary"
+                >
+                  <i class="fas fa-external-link-alt"></i> View publication
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal-on-scroll">
+            <div class="project-image project-image-link">
+              <a href="#" target="_blank" rel="noopener">
+                <div class="project-placeholder">
+                  <i class="fas fa-newspaper"></i>
+                </div>
+              </a>
+            </div>
+            <div class="project-content">
+              <h3>Local chatbot with DeepSeek and Chainlit </h3>
+              <p>
+               A 100% local chatbot app powered by DeepSeek-R1 (via Ollama) and built with Chainlit for an intuitive chat interface. The assistant uses the DeepSeek-R1 model to generate concise and clear responses to user queries. This app runs entirely on your local machine, ensuring privacy and security.
+              </p>
+              <div class="project-tags">
+                <span>Python</span>
+                <span>LLM</span>
+                <span>Privacy</span>
+                <span>Chatbot</span>
+              </div>
+              <div class="project-links-row">
+                <a href="https://github.com/marasendra/deepseek-R1-local-app" target="_blank" rel="noopener" class="project-link">
+                  <i class="fab fa-github"></i> Code
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="script.js" defer></script>
