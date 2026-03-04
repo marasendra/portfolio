@@ -38,9 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const bioElement = document.getElementById("bio-text");
   const phrases = [
-    "Data Scientist with 8+ years of experience.",
-    "From raw data to decision-ready insights.",
-    "I design AI-driven solutions that optimize workflows.",
+    "Healthcare Data Scientist with 8+ years of experience.",
+    "I turn messy clinical and RWE data into insights for clinicians.",
+    "I build interpretable models that support better care decisions.",
   ];
 
   let phraseIndex = 0;
