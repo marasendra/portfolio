@@ -1,5 +1,4 @@
 <!doctype html>
-<!-- Lien vers les icônes Font Awesome -->
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -33,7 +32,9 @@
     <div class="profile-card">
       <img src="img/profil.png" alt="Profile" class="avatar" />
       <h2 class="name">
-        Hi, I am <span id="first-name">Marie-Ange</span>
+        <span class="intro-word">Hi,</span><span class="intro-word">I</span
+        ><span class="intro-word">am</span
+        ><span id="first-name">Marie-Ange</span>
         <span class="wave-hand" role="img" aria-label="waving hand">👋</span>
       </h2>
       <p class="bio terminal-cursor" id="bio-text" aria-live="polite"></p>
@@ -68,87 +69,6 @@
     </div>
 
     <script src="particles.js-master/particles.min.js"></script>
-    <script>
-      particlesJS("particles-js", {
-        particles: {
-          number: {
-            value: 60,
-          },
-          color: {
-            value: "#0077B5",
-          },
-          shape: {
-            type: "circle",
-          },
-          opacity: {
-            value: 0.2,
-          },
-          size: {
-            value: 3,
-          },
-          line_linked: {
-            enable: true,
-            distance: 150,
-            color: "#0077B5",
-            opacity: 0.2,
-            width: 1,
-          },
-          move: {
-            enable: true,
-            speed: 2,
-          },
-        },
-      });
-
-      const bioElement = document.getElementById("bio-text");
-      const phrases = [
-        "Data Scientist with 8+ years of experience.",
-        "From raw data to decision-ready insights.",
-        "I design AI-driven solutions that optimize workflows.",
-      ];
-
-      let phraseIndex = 0;
-      let charIndex = 0;
-      let isDeleting = false;
-
-      function typeBio() {
-        const currentPhrase = phrases[phraseIndex];
-
-        if (isDeleting) {
-          charIndex -= 1;
-        } else {
-          charIndex += 1;
-        }
-
-        bioElement.textContent = currentPhrase.slice(0, charIndex);
-
-        if (!isDeleting && charIndex === currentPhrase.length) {
-          isDeleting = true;
-          setTimeout(typeBio, 2400);
-          return;
-        }
-
-        if (isDeleting && charIndex === 0) {
-          isDeleting = false;
-          phraseIndex = (phraseIndex + 1) % phrases.length;
-          setTimeout(typeBio, 550);
-          return;
-        }
-
-        const typingSpeed = isDeleting ? 50 : 110;
-        setTimeout(typeBio, typingSpeed);
-      }
-
-      typeBio();
-
-      const navLinks = document.querySelectorAll(".side-nav .nav-links a");
-
-      navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          navLinks.forEach((item) => item.classList.remove("active"));
-          link.classList.add("active");
-        });
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

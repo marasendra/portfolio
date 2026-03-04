@@ -115,12 +115,17 @@ nav {
 
 .name {
   margin: 30px 0 8px;
-  color:rgba(125, 211, 252, 0.8);
+  color: #828181;
   font-family: var(--serif);
   font-size: clamp(2rem, 5.5vw, 3.6rem);
   line-height: 1;
   font-weight: 700;
   letter-spacing: -0.03em;
+}
+
+.intro-word {
+  display: inline-block;
+  margin-right: 0.3em;
 }
 
 #first-name {
@@ -194,7 +199,7 @@ nav {
   color: #0a2d5e;
   background: linear-gradient(
     to top,
-    rgba(125, 211, 252, 0.72)  20% 70%,
+    rgba(125, 211, 252, 0.72) 20% 70%,
     transparent 55% 100%
   );
   border-radius: 6px;
