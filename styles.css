@@ -114,7 +114,18 @@ nav {
   z-index: 1;
 }
 
+.contact {
+  padding: 0 40px 60px;
+  position: relative;
+  z-index: 1;
+}
+
 .projects-container {
+  width: min(80%, 1100px);
+  margin: 0 auto;
+}
+
+.contact-container {
   width: min(80%, 1100px);
   margin: 0 auto;
 }
@@ -133,6 +144,42 @@ nav {
   line-height: 1.6;
   margin-bottom: 26px;
   max-width: 720px;
+}
+
+.contact-intro {
+  text-align: left;
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 720px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.contact-card {
+  background: white;
+  border: 1px solid rgba(10, 45, 94, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: #0a2d5e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 16px;
+  font-family: var(--mono);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
 }
 
 .projects-grid {
@@ -449,8 +496,24 @@ nav {
   background-color: #62696f;
 }
 
+.site-footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 10px 20px 26px;
+  color: #6b7280;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
 @media (max-width: 900px) {
   .projects,
+  .contact,
   body {
     padding-left: 20px;
     padding-right: 20px;
@@ -462,7 +525,8 @@ nav {
   }
 
   .profile-card,
-  .projects-container {
+  .projects-container,
+  .contact-container {
     width: min(95%, 1100px);
   }
 
